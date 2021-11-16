@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-man-ang-compo',
+  template: `<h1>
+      Worldddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd!
+    </h1>
+    <p>This template definition spans multiple lines.</p> `,
+  //   templateUrl: './man-ang-compo.component.html',
+  //   styleUrls: ['./man-ang-compo.component.css'],
+  styles: ['h1 { background-color: grey; }'],
+})
+export class manAngCompoComponent {}
