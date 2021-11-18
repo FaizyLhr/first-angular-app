@@ -6,11 +6,19 @@ import { manAngCompoComponent } from './MyComponents/man-ang-compo/man-ang-compo
 import { secManGenCompo } from './MyComponents/sec-man-gen-compo/sec-man-gen-compo.component';
 import { ParentChildComponent } from './MyComponents/parent-child/parent-child.component';
 import { NotFoundComponent } from './MyComponents/not-found/not-found.component';
+import { ChildNavComponent } from './MyComponents/child-nav/child-nav.component';
+import { Child1Component } from './MyComponents/child1/child1.component';
+import { Child2Component } from './MyComponents/child2/child2.component';
 
 const routes: Routes = [
+  // Redirection
   {
     path: '',
-    component: AutoAngCompoComponent,
+    redirectTo: '/automatic-generated-component',
+    // To implement on all not found paths use as
+    // pathMatch: 'prefix',
+    // To implement on specific not found path use as
+    pathMatch: 'full',
   },
   {
     path: 'automatic-generated-component',
@@ -28,6 +36,21 @@ const routes: Routes = [
     path: 'communication-component',
     component: ParentChildComponent,
   },
+  {
+    path: 'child-Nav',
+    component: ChildNavComponent,
+    children: [
+      {
+        path: 'child-1',
+        component: Child1Component,
+      },
+      {
+        path: 'child-2',
+        component: Child2Component,
+      },
+    ],
+  },
+  // 404 Page Route
   {
     path: '**',
     component: NotFoundComponent,

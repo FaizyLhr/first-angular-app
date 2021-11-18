@@ -20,7 +20,6 @@
         <li ngbNavItem>
           <a
             ngbNavLink
-            routerLink=""
             routerLink="/automatic-generated-component"
             routerLinkActive="active"
             >Automatic </a
@@ -49,6 +48,11 @@
             routerLink="/communication-component"
             >Communication Component</a
           ><ng-template ngbNavContent>Communication Component</ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink routerLinkActive="active" routerLink="/child-Nav"
+            >Child Nav</a
+          ><ng-template ngbNavContent>ChildNav Component</ng-template>
         </li>
       </ul>
       <div [ngbNavOutlet]="nav"></div>
