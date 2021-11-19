@@ -42,17 +42,27 @@
           ><ng-template ngbNavContent>Second Manual</ng-template>
         </li>
         <li ngbNavItem>
+          <a ngbNavLink routerLinkActive="active" routerLink="/directive"
+            >Directive</a
+          ><ng-template ngbNavContent>Directive</ng-template>
+        </li>
+        <li ngbNavItem>
           <a
             ngbNavLink
             routerLinkActive="active"
             routerLink="/communication-component"
-            >Communication Component</a
-          ><ng-template ngbNavContent>Communication Component</ng-template>
+            >Communication</a
+          ><ng-template ngbNavContent>Communication</ng-template>
         </li>
         <li ngbNavItem>
           <a ngbNavLink routerLinkActive="active" routerLink="/child-Nav"
             >Child Nav</a
           ><ng-template ngbNavContent>ChildNav Component</ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink routerLinkActive="active" routerLink="/binding"
+            >Binding</a
+          ><ng-template ngbNavContent>Binding Component</ng-template>
         </li>
       </ul>
       <div [ngbNavOutlet]="nav"></div>

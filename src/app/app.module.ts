@@ -13,9 +13,11 @@ import { NotFoundComponent } from './MyComponents/not-found/not-found.component'
 import { Child1Component } from './MyComponents/child1/child1.component';
 import { Child2Component } from './MyComponents/child2/child2.component';
 import { ChildNavComponent } from './MyComponents/child-nav/child-nav.component';
+import { BindingComponent } from './MyComponents/binding/binding.component';
+import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, routingComponents, NotFoundComponent, Child1Component, Child2Component, ChildNavComponent],
+  declarations: [AppComponent, NavBarComponent, routingComponents, NotFoundComponent, Child1Component, Child2Component, ChildNavComponent, BindingComponent, DirectivePracComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],

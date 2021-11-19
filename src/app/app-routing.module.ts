@@ -9,6 +9,8 @@ import { NotFoundComponent } from './MyComponents/not-found/not-found.component'
 import { ChildNavComponent } from './MyComponents/child-nav/child-nav.component';
 import { Child1Component } from './MyComponents/child1/child1.component';
 import { Child2Component } from './MyComponents/child2/child2.component';
+import { BindingComponent } from './MyComponents/binding/binding.component';
+import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 
 const routes: Routes = [
   // Redirection
@@ -33,6 +35,10 @@ const routes: Routes = [
     component: secManGenCompo,
   },
   {
+    path: 'directive',
+    component: DirectivePracComponent,
+  },
+  {
     path: 'communication-component',
     component: ParentChildComponent,
   },
@@ -49,6 +55,10 @@ const routes: Routes = [
         component: Child2Component,
       },
     ],
+  },
+  {
+    path: 'binding',
+    component: BindingComponent,
   },
   // 404 Page Route
   {

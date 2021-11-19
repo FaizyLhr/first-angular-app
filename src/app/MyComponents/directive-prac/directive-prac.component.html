@@ -1,0 +1,104 @@
+<p>directive-prac works!</p>
+<!-- Directive Practice -->
+<section>
+  <div class="container">
+    <h1>Directives</h1>
+    <h2>ngIf</h2>
+    <div class="row">
+      <div class="col-12 text-center">
+        <!-- 1: Method -->
+        <!-- Simple if -->
+        <div *ngIf="courses.length > 0"><b>List of Course No 1</b></div>
+        <div *ngIf="courses.length === 0">No Courses</div>
+        <!-- 2: Method -->
+        <!-- Using ng If and single ng Template -->
+        <div *ngIf="courses2.length > 0; else noCourse2">
+          <b>List of Course No 2</b>
+        </div>
+        <ng-template #noCourse2>No Courses</ng-template><br />
+        <!-- 3: Method -->
+        <!-- Using ng If and 2 ng Template -->
+        <div
+          *ngIf="courses3.length > 0; then noCourse3List; else noCourse3"
+        ></div>
+        <ng-template #noCourse3List><b>List of Course No 3</b></ng-template>
+        <ng-template #noCourse3>No Courses</ng-template>
+      </div>
+    </div>
+    <h2>Hidden Attribute Bindings</h2>
+    <div class="row text-center">
+      <div class="col-12">
+        <div [hidden]="methods.length === 0">List of Methods</div>
+        <div [hidden]="methods.length > 0">No Methods</div>
+      </div>
+    </div>
+    <h2>ng Switch Case</h2>
+    <div class="row text-center">
+      <div class="col-12">
+        <div
+          class="btn btn-outline-primary"
+          (click)="viewMode = 'map'"
+          [class.active]="viewMode === 'map'"
+        >
+          Map View
+        </div>
+        <div
+          class="btn btn-outline-primary"
+          (click)="viewMode = 'list'"
+          [class.active]="viewMode === 'list'"
+        >
+          List View
+        </div>
+        <div [ngSwitch]="viewMode">
+          <div *ngSwitchCase="'map'">Map View Content</div>
+          <div *ngSwitchCase="'list'">List View Content</div>
+          <div *ngSwitchDefault>Otherwise</div>
+        </div>
+      </div>
+    </div>
+    <h2>ng For</h2>
+    <div class="row">
+      <div class="col-12">
+        <h5>Model Lists</h5>
+        <ul>
+          <li *ngFor="let model of models; index as i; even as isEven">
+            {{ i }}-{{ model.name }}
+            <span *ngIf="isEven">Even</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h2>ng For & Change Detection</h2>
+    <div class="row">
+      <div class="col-12">
+        <div class="btn btn-primary" (click)="onAdd()">Add</div>
+        <ul>
+          <li *ngFor="let model of models">
+            {{ model.name }}
+            <div (click)="onDel(model)" class="btn btn-danger btn-sm">Del</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Component Practice  -->
+<section>
+  <div class="container">
+    <h1 class="bg-warning">Main App Module</h1>
+    <div>
+      <h2>Welcome {{ title }}</h2>
+      <h2 class="bg-danger text-center text-white">Parent Component</h2>
+      <h3>Message Coming from Child</h3>
+      <h5 id="parent">Message : {{ message }}</h5>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-parent-child
+          (childEvent)="message = $event"
+          [parentData]="name"
+        ></app-parent-child>
+      </div>
+    </div>
+  </div>
+</section>
