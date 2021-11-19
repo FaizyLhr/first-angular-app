@@ -3,10 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AutoAngCompoComponent } from './MyComponents/auto-ang-compo/auto-ang-compo.component';
-import { manAngCompoComponent } from './MyComponents/man-ang-compo/man-ang-compo.component';
-import { secManGenCompo } from './MyComponents/sec-man-gen-compo/sec-man-gen-compo.component';
-import { ParentChildComponent } from './MyComponents/parent-child/parent-child.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './MyComponents/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './MyComponents/not-found/not-found.component';
@@ -17,6 +14,7 @@ import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { FormsModule } from '@angular/forms';
+import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     BindingComponent,
     DirectivePracComponent,
     FurtherComponent,
+    InterfacPComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],

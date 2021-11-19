@@ -12,6 +12,7 @@ import { Child2Component } from './MyComponents/child2/child2.component';
 import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 import { FurtherComponent } from './MyComponents/further/further.component';
+import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 
 const routes: Routes = [
   // Redirection
@@ -64,7 +65,14 @@ const routes: Routes = [
   {
     path: 'further',
     component: FurtherComponent,
+    children: [
+      {
+        path: 'interface',
+        component: InterfacPComponent,
+      },
+    ],
   },
+
   // 404 Page Route
   {
     path: '**',
