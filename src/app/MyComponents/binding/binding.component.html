@@ -44,18 +44,18 @@
       </div>
       <h2>Two Way Binding</h2>
       <div class="row bg-success">
-        <h1>Enter Name :</h1>
-        <input
-          [(ngModel)]="uName"
-          type="text"
-          name="name"
-          class="pl-4"
-          id="name"
-        />
         <div class="col-12">
+          Enter Name :
+          <input [(ngModel)]="uName" type="text" name="name" id="name" /><br />
+          Enter Price :
+          <input [(ngModel)]="price" type="text" name="name" id="name" />
           <h3>
             You have entered the name ::::
             <span class="bg-danger text-white p-2"> {{ uName }}</span>
+          </h3>
+          <h3>
+            You have entered the Price ::::
+            <span class="bg-danger text-white p-2"> {{ price }}</span>
           </h3>
         </div>
       </div>
@@ -65,10 +65,28 @@
           <h3>display Input Value with Validation</h3>
           <h4>Name uppercase : {{ uName | uppercase }}</h4>
           <h4>Name lowercase : {{ uName | lowercase }}</h4>
-          <h4>Name in Currency if Number : {{ uName | currency }}</h4>
+          <h4>Price in Currency : {{ price | currency }}</h4>
           <h4>
-            Name in Currency with params if Number :
-            {{ uName | currency: "USD":"symbol":"1.2-2" }}
+            Price in Currency with params :
+            {{ price | currency: "USD":"symbol":"1.2-2" }}
+          </h4>
+        </div>
+      </div>
+      <h2>Custom Pipes</h2>
+      <div class="row bg-warning">
+        <div class="col-12">
+          <h1>Filters</h1>
+        </div>
+      </div>
+      <h2>Using Getter and Setters</h2>
+      <div class="row bg-danger text-white">
+        <div class="col-12">
+          <h3>Value is Setting through Input using Setters</h3>
+          Enter List Value :
+          <input [(ngModel)]="list" type="text" name="list" id="" />
+          <h3>Value is Coming through Input using Getter</h3>
+          <h4>
+            Value is : <span class="bg-dark"> {{ list }}</span>
           </h4>
         </div>
       </div>
