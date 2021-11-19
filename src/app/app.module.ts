@@ -15,10 +15,23 @@ import { Child2Component } from './MyComponents/child2/child2.component';
 import { ChildNavComponent } from './MyComponents/child-nav/child-nav.component';
 import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
+import { FurtherComponent } from './MyComponents/further/further.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, routingComponents, NotFoundComponent, Child1Component, Child2Component, ChildNavComponent, BindingComponent, DirectivePracComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    routingComponents,
+    NotFoundComponent,
+    Child1Component,
+    Child2Component,
+    ChildNavComponent,
+    BindingComponent,
+    DirectivePracComponent,
+    FurtherComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

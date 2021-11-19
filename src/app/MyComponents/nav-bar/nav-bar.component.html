@@ -23,7 +23,7 @@
             routerLink="/automatic-generated-component"
             routerLinkActive="active"
             >Automatic </a
-          ><ng-template ngbNavContent>Automatic content</ng-template>
+          ><ng-template ngbNavContent>Automatic</ng-template>
         </li>
         <li ngbNavItem>
           <a
@@ -57,12 +57,17 @@
         <li ngbNavItem>
           <a ngbNavLink routerLinkActive="active" routerLink="/child-Nav"
             >Child Nav</a
-          ><ng-template ngbNavContent>ChildNav Component</ng-template>
+          ><ng-template ngbNavContent>ChildNav</ng-template>
         </li>
         <li ngbNavItem>
           <a ngbNavLink routerLinkActive="active" routerLink="/binding"
             >Binding</a
-          ><ng-template ngbNavContent>Binding Component</ng-template>
+          ><ng-template ngbNavContent>Binding</ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink routerLinkActive="active" routerLink="/further"
+            >Further</a
+          ><ng-template ngbNavContent>Further</ng-template>
         </li>
       </ul>
       <div [ngbNavOutlet]="nav"></div>

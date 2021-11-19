@@ -3,10 +3,75 @@
   <div class="row">
     <div class="col-12 text-center">
       <h2>One Way Binding OR Interpolation</h2>
-      <h3 class="p-3">
-        Value of Var Coming from Parent:
-        <span class="text-white"> {{ val }}</span>
-      </h3>
+      <div class="row bg-secondary">
+        <div class="col-12">
+          <h2>Template Expression</h2>
+          <h3 class="p-3">
+            Value of Var Coming from Parent:
+            <span class="text-white"> {{ val }}</span>
+          </h3>
+        </div>
+      </div>
+      <h2>Element Expression</h2>
+      <div class="row bg-danger">
+        <div class="col-4">
+          <!-- Simple -->
+          <h5>Simple</h5>
+          <img height="300px" src="../../../assets/Images/Faizy.jpg" alt="" />
+        </div>
+        <div class="col-4 bg-warning">
+          <!-- If you want to use as element property define source in ts file -->
+          <h5
+            [style.background-color]="bgColor"
+            [style.font-size.px]="fontSize"
+          >
+            Element Property
+          </h5>
+          <img height="300px" [src]="source" alt="" />
+        </div>
+        <div class="col-4 bg-dark text-white">
+          <!-- If you want to use as template expression define source in ts file -->
+          <h5>template expression</h5>
+          <img height="300px" src="{{ source }}" alt="" />
+        </div>
+      </div>
+      <h2>Event Binding</h2>
+      <div class="row">
+        <div class="col-12 bg-white">
+          <h3>Boolean Value is : {{ bolVal }}</h3>
+          <div (click)="toggleBoolean()" class="btn btn-danger">Toggle</div>
+        </div>
+      </div>
+      <h2>Two Way Binding</h2>
+      <div class="row bg-success">
+        <h1>Enter Name :</h1>
+        <input
+          [(ngModel)]="uName"
+          type="text"
+          name="name"
+          class="pl-4"
+          id="name"
+        />
+        <div class="col-12">
+          <h3>
+            You have entered the name ::::
+            <span class="bg-danger text-white p-2"> {{ uName }}</span>
+          </h3>
+        </div>
+      </div>
+      <h2>Pipes</h2>
+      <div class="row bg-dark text-white">
+        <div class="col-12">
+          <h3>display Input Value with Validation</h3>
+          <h4>Name uppercase : {{ uName | uppercase }}</h4>
+          <h4>Name lowercase : {{ uName | lowercase }}</h4>
+          <h4>Name in Currency if Number : {{ uName | currency }}</h4>
+          <h4>
+            Name in Currency with params if Number :
+            {{ uName | currency: "USD":"symbol":"1.2-2" }}
+          </h4>
+        </div>
+      </div>
     </div>
   </div>
 </div>
