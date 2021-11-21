@@ -16,7 +16,7 @@ import { FurtherComponent } from './MyComponents/further/further.component';
 import { FormsModule } from '@angular/forms';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 import { FilteringComponent } from './MyComponents/filtering/filtering.component';
-import { StarComponentComponent } from './MyComponents/star-component/star-component.component';
+import { StarComponent } from './shared/star/star.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { StarComponentComponent } from './MyComponents/star-component/star-compo
     FurtherComponent,
     InterfacPComponent,
     FilteringComponent,
-    StarComponentComponent,
+    StarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
