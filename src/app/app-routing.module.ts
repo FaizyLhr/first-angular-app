@@ -13,6 +13,7 @@ import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
+import { FilteringComponent } from './MyComponents/filtering/filtering.component';
 
 const routes: Routes = [
   // Redirection
@@ -69,6 +70,10 @@ const routes: Routes = [
       {
         path: 'interface',
         component: InterfacPComponent,
+      },
+      {
+        path: 'filter',
+        component: FilteringComponent,
       },
     ],
   },

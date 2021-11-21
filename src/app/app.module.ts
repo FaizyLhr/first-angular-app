@@ -15,6 +15,8 @@ import { DirectivePracComponent } from './MyComponents/directive-prac/directive-
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { FormsModule } from '@angular/forms';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
+import { FilteringComponent } from './MyComponents/filtering/filtering.component';
+import { StarComponentComponent } from './MyComponents/star-component/star-component.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.compone
     DirectivePracComponent,
     FurtherComponent,
     InterfacPComponent,
+    FilteringComponent,
+    StarComponentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],

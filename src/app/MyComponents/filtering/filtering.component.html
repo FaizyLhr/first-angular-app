@@ -1,0 +1,42 @@
+<div class="container bg-danger text-white">
+  <h1>filtering works!</h1>
+  <div class="row m-3">
+    <h2>Search Houses by Area :</h2>
+    <input
+      [(ngModel)]="filterVal"
+      class="ml-3 pl-3 pr-3"
+      placeholder="Search Area"
+      type="text"
+      name="filter"
+      id="filter"
+    />
+  </div>
+  <div class="row">
+    <h2 class="ml-3">
+      Show search results for :
+      <span class="bg-warning ml-3 text-dark">{{ filterVal }}</span>
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div
+        *ngIf="filteredHouses.length > 0; then trueState; else falseState"
+      ></div>
+      <ng-template #trueState>
+        <h2>All Houses ::::::::</h2>
+        <div class="bg-dark p-3 m-3" *ngFor="let house of filteredHouses">
+          <h3>id : {{ house.id }}</h3>
+          <h3>rooms : {{ house.rooms }}</h3>
+          <h3>phone : {{ house.phone }}</h3>
+          <h3>city : {{ house.city }}</h3>
+          <h3>rent : {{ house.rent }}</h3>
+          <h3>area : {{ house.area }}</h3>
+          <h3>rating : {{ house.rating }} stars</h3>
+        </div>
+      </ng-template>
+      <ng-template #falseState
+        ><h2 class="bg-dark p-3 m-3">No Houses</h2></ng-template
+      >
+    </div>
+  </div>
+</div>
