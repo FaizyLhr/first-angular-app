@@ -1,4 +1,7 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { IHouses } from './houses';
 
 // For Whole Application Injection
@@ -8,44 +11,29 @@ import { IHouses } from './houses';
 // Register Service for a Specific Component
 // Set Provider field in that Component
 export class HouseService {
-  getHouses(): IHouses[] {
-    return [
-      {
-        id: 1,
-        rooms: 3,
-        phone: 12321,
-        city: 'lhr',
-        rent: 300,
-        area: 'wafaqi',
-        rating: 3,
-      },
-      {
-        id: 2,
-        rooms: 3,
-        phone: 12321,
-        city: 'lhr',
-        rent: 300,
-        rating: 5,
-        area: 'i',
-      },
-      {
-        id: 3,
-        rooms: 3,
-        phone: 12321,
-        city: 'lhr',
-        rent: 300,
-        area: 'aqi',
-        rating: 2,
-      },
-      {
-        id: 4,
-        rooms: 3,
-        phone: 12321,
-        city: 'lhr',
-        rent: 300,
-        area: 'faqi',
-        rating: 1,
-      },
-    ];
+  private houseUrl = 'api/houses/houses.json';
+
+  constructor(private http: HttpClient) {}
+
+  getHouses(): Observable<IHouses[]> {
+    return this.http.get<IHouses[]>(this.houseUrl).pipe(
+      tap((data) => {
+        return console.log('All : ', JSON.stringify(data));
+      }),
+      catchError(this.handleError)
+    );
   }
+
+  private handleError(err: HttpErrorResponse) {
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An Error occurred: ${err.error.message}`;
+    } else {
+      errorMessage = `Server returned an error Code: ${err.status}, error message is ${err.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(errorMessage);
+  }
+
+  // private handleError(err: HttpErrorResponse);
 }

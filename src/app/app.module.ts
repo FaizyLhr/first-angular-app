@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +15,6 @@ import { ChildNavComponent } from './MyComponents/child-nav/child-nav.component'
 import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 import { FurtherComponent } from './MyComponents/further/further.component';
-import { FormsModule } from '@angular/forms';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 import { FilteringComponent } from './MyComponents/filtering/filtering.component';
 import { StarComponent } from './MyComponents/star/star.component';
@@ -34,7 +35,13 @@ import { StarComponent } from './MyComponents/star/star.component';
     FilteringComponent,
     StarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

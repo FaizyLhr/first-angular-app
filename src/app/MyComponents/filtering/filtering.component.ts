@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { HouseService } from './filtering.service';
 import { IHouses } from './houses';
 
@@ -9,12 +10,17 @@ import { IHouses } from './houses';
   // Register Service for a Specific Component
   // providers: [HouseService],
 })
-export class FilteringComponent implements OnInit {
+export class FilteringComponent implements OnInit, OnDestroy {
   private _filterVal: string = 'w';
+
+  errorMessage: string = '';
 
   pageTitle: string = 'Filter Page';
 
   houses: IHouses[] = [];
+
+  sub!: Subscription;
+  // sub: Subscription | undefined;
 
   public get filterVal(): string {
     return this._filterVal;
@@ -51,7 +57,19 @@ export class FilteringComponent implements OnInit {
   constructor(private houseService: HouseService) {}
 
   ngOnInit(): void {
-    this.houses = this.houseService.getHouses();
+    this.sub = this.houseService.getHouses().subscribe({
+      next: (houses) => {
+        this.houses = houses;
+      },
+      error: (err) => {
+        this.errorMessage = err;
+      },
+    });
     this.performFilter(this._filterVal);
+    // this.houses = this.houseService.getHouses();
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }
