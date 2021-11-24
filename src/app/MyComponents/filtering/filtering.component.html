@@ -1,4 +1,5 @@
 <div class="container bg-danger text-white">
+  <h1 class="text-center bg-primary">{{ pageTitle }}</h1>
   <h1>filtering works!</h1>
   <div class="row m-3">
     <h2>Search Houses by Area :</h2>
@@ -31,7 +32,12 @@
           <h3>city : {{ house.city }}</h3>
           <h3>rent : {{ house.rent }}</h3>
           <h3>area : {{ house.area }}</h3>
-          <h3><app-star></app-star></h3>
+          <h3>
+            <app-star
+              (ratingClicked)="onRatingClicked($event)"
+              [rating]="house.rating"
+            ></app-star>
+          </h3>
           <!-- <h3>rating : {{ house.rating }} stars</h3> -->
         </div>
       </ng-template>

@@ -7,7 +7,9 @@ import { IHouses } from './houses';
   styleUrls: ['./filtering.component.css'],
 })
 export class FilteringComponent implements OnInit {
-  private _filterVal: string = 'area';
+  private _filterVal: string = 'w';
+
+  pageTitle: string = 'Filter Page';
 
   houses: IHouses[] = [
     {
@@ -16,7 +18,7 @@ export class FilteringComponent implements OnInit {
       phone: 12321,
       city: 'lhr',
       rent: 300,
-      area: 'Wafaqi',
+      area: 'wafaqi',
       rating: 3,
     },
     {
@@ -72,7 +74,15 @@ export class FilteringComponent implements OnInit {
   arr: IHouses[] = [];
   filteredHouses: IHouses[] = [];
 
+  onRatingClicked(message: string): void {
+    // console.log(message);
+
+    this.pageTitle = `Product List :  ${message}`;
+  }
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.performFilter(this._filterVal);
+  }
 }
