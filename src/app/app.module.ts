@@ -16,7 +16,7 @@ import { FurtherComponent } from './MyComponents/further/further.component';
 import { FormsModule } from '@angular/forms';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 import { FilteringComponent } from './MyComponents/filtering/filtering.component';
-import { StarComponent } from './shared/star/star.component';
+import { StarComponent } from './MyComponents/star/star.component';
 
 @NgModule({
   declarations: [
