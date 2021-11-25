@@ -4,15 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { FilteringComponent } from '../MyComponents/filtering/filtering.component';
-import { StarComponent } from '../MyComponents/star/star.component';
 import { HouseDetailsComponent } from '../MyComponents/house-details/house-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [FilteringComponent, StarComponent, HouseDetailsComponent],
+  declarations: [FilteringComponent, HouseDetailsComponent],
   imports: [
-    CommonModule,
-    FormsModule,
     RouterModule,
+    SharedModule,
     // If We are Not supposed to define routes on house module file
     // RouterModule.forChild([
     //   {

@@ -16,8 +16,6 @@ import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
-import { StarComponent } from './MyComponents/star/star.component';
-import { RouterModule } from '@angular/router';
 import { HouseModule } from './house/house.module';
 
 @NgModule({
