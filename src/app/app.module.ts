@@ -16,10 +16,9 @@ import { BindingComponent } from './MyComponents/binding/binding.component';
 import { DirectivePracComponent } from './MyComponents/directive-prac/directive-prac.component';
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
-import { FilteringComponent } from './MyComponents/filtering/filtering.component';
 import { StarComponent } from './MyComponents/star/star.component';
 import { RouterModule } from '@angular/router';
-import { HouseDetailsComponent } from './MyComponents/house-details/house-details.component';
+import { HouseModule } from './house/house.module';
 
 @NgModule({
   declarations: [
@@ -34,9 +33,6 @@ import { HouseDetailsComponent } from './MyComponents/house-details/house-detail
     DirectivePracComponent,
     FurtherComponent,
     InterfacPComponent,
-    FilteringComponent,
-    StarComponent,
-    HouseDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,12 +41,13 @@ import { HouseDetailsComponent } from './MyComponents/house-details/house-detail
     HttpClientModule,
     FormsModule,
     // If We are Not supposed to define routes on app routing module file
-    RouterModule.forRoot([
-      {
-        path: 'chk',
-        component: StarComponent,
-      },
-    ]),
+    // RouterModule.forRoot([
+    //   {
+    //     path: 'chk',
+    //     component: StarComponent,
+    //   },
+    // ]),
+    HouseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
