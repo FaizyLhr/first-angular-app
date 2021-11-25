@@ -27,11 +27,13 @@
         <h2>All Houses ::::::::</h2>
         <div class="bg-dark p-3 m-3" *ngFor="let house of filteredHouses">
           <h3>id : {{ house.id }}</h3>
+          <h3>
+            <a [routerLink]="['../house', house.id]">area : {{ house.area }}</a>
+          </h3>
           <h3>rooms : {{ house.rooms }}</h3>
           <h3>phone : {{ house.phone }}</h3>
           <h3>city : {{ house.city }}</h3>
           <h3>rent : {{ house.rent }}</h3>
-          <h3>area : {{ house.area }}</h3>
           <h3>
             <app-star
               (ratingClicked)="onRatingClicked($event)"
@@ -47,3 +49,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

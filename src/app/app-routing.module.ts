@@ -14,6 +14,7 @@ import { DirectivePracComponent } from './MyComponents/directive-prac/directive-
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 import { FilteringComponent } from './MyComponents/filtering/filtering.component';
+import { HouseDetailsComponent } from './MyComponents/house-details/house-details.component';
 
 const routes: Routes = [
   // Redirection
@@ -74,6 +75,16 @@ const routes: Routes = [
       {
         path: 'filter',
         component: FilteringComponent,
+        // children: [
+        //   {
+        //     path: 'house/:houseID',
+        //     component: HouseDetailsComponent,
+        //   },
+        // ],
+      },
+      {
+        path: 'house/:houseID',
+        component: HouseDetailsComponent,
       },
     ],
   },
