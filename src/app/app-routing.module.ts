@@ -16,6 +16,7 @@ import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.compone
 import { FilteringComponent } from './MyComponents/filtering/filtering.component';
 import { HouseDetailsComponent } from './MyComponents/house-details/house-details.component';
 import { HouseDetailsGuard } from './MyComponents/house-details/house-details.guard';
+import { ApiCallComponent } from './MyComponents/api-call/api-call.component';
 
 const routes: Routes = [
   // Redirection
@@ -87,6 +88,10 @@ const routes: Routes = [
         path: 'house/:houseID',
         canActivate: [HouseDetailsGuard],
         component: HouseDetailsComponent,
+      },
+      {
+        path: 'apiCall',
+        component: ApiCallComponent,
       },
     ],
   },

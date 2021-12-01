@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './MyComponents/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './MyComponents/not-found/not-found.component';
 import { Child1Component } from './MyComponents/child1/child1.component';
@@ -17,6 +18,7 @@ import { DirectivePracComponent } from './MyComponents/directive-prac/directive-
 import { FurtherComponent } from './MyComponents/further/further.component';
 import { InterfacPComponent } from './MyComponents/interfac-p/interfac-p.component';
 import { HouseModule } from './house/house.module';
+import { ApiCallComponent } from './MyComponents/api-call/api-call.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { HouseModule } from './house/house.module';
     DirectivePracComponent,
     FurtherComponent,
     InterfacPComponent,
+    ApiCallComponent,
   ],
   imports: [
     BrowserModule,

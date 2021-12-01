@@ -1,0 +1,18 @@
+<div class="container bg-primary">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">api-call works!</h1>
+      <div class="btn btn-light ml-5">Show Data</div>
+      <h2 class="text-center m-4">
+        The List of All Todo's is Displayed here ::
+      </h2>
+      <div *ngFor="let todo of todos">
+        <ul class="bg-light text-center list-unstyled p-3">
+          <li><b>Id :</b> {{ todo.id }}</li>
+          <li><b> title :</b> {{ todo.title }}</li>
+          <li><b>completed :</b> {{ todo.completed }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
